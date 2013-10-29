@@ -65,14 +65,6 @@ module.exports = function (grunt) {
   evt.on(['section', 'contentFile', '*'], parseMarkdown);
 
   evt.on(['section', 'init'], function (options) {
-    var proto = options.pagePrototype;
-
-    proto.title = '';
-    proto.description = '';
-    proto.body = '';
-    proto.cover = null;
-    proto.wordCount = 0;
-
     if (!options.contentExtensions || !options.contentExtensions.length) {
       options.contentExtensions = ['md', 'markdown', 'mdown', 'mkdn', 'mkd', 'mdwn', 'text', 'txt'];
     }
