@@ -50,16 +50,25 @@ module.exports = function (grunt) {
     }
 
     // Get description from the paragraph immediately following h1
-    node.description = $('h1+p').first().text();
+    var description = $('h1+p').first().text();
+    if (description) {
+      node.description = description;
+    }
 
     // Pull out title from first h1
     var h1 = $('h1').first();
-    node.title = h1.text();
+    var title = h1.text();
+    if (title) {
+      node.title = title;
+    }
     h1.remove();
 
     evt.emit(['section', 'parsedMarkdown'], $, node);
 
-    node.body = $.html();
+    var body = $.html();
+    if (body) {
+      node.body = body;
+    }
   }
 
   evt.on(['section', 'contentFile', '*'], parseMarkdown);
