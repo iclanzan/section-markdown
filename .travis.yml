@@ -1,4 +1,12 @@
 language: node_js
 node_js:
-  - 0.8
-  - 0.10
+- 0.8
+- 0.1
+deploy:
+  provider: npm
+  email: sorin@iclanzan.com
+  api_key:
+    secure: JOhl+DCWbl5gFHz4ZVVtgq+v//tiG11xW9UGbJvC914YMc0JuOv7wQui3D0mJOkUcShoyQBgq8+fN8q0Ql5Ewrsz9F2X1dnia+u4gURdt8DIGlcHD0QUN0CJmNQtmGhU3Ly5WsOpNgdDjh9fcb9KXI07ruEfoxBSJCpNFs34JKY=
+  on:
+    repo: iclanzan/section-markdown
+    branch: master
