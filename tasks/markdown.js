@@ -38,7 +38,6 @@ module.exports = function (grunt) {
 
     // Work out word count
     node.wordCount = $.root().text().split(/\s+/).length;
-    console.log($.html());
 
     // If the first thing in our document is an image then it is the cover image
     var cover = $.root().children('p:first-child').find('img:only-child');
